@@ -11,14 +11,10 @@ Chủ đề: Lập trình ứng dụng web thương mại điện tử trên n�
 1. Cài đặt môi trường linux
  - enable wsl: cài đặt docker desktop
  - enable wsl: cài đặt ubuntu
- - sử dụng Hyper-V: cài đặt ubuntu
- - sử dụng VMware : cài đặt ubuntu
- - sử dụng Virtual Box: cài đặt ubuntu
 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay)
 3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: 
    mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 4. Lập trình web frontend+backend:
- SV chọn 1 trong các web sau:
  4.1 Web thương mại điện tử
  - Tạo web dạng Single Page Application (SPA), chỉ gồm 1 file index.html, toàn bộ giao diện do javascript sinh động.
  - Có tính năng login, lưu phiên đăng nhập vào cookie và session
@@ -38,7 +34,8 @@ Chủ đề: Lập trình ứng dụng web thương mại điện tử trên n�
  - Cấu hình nginx để http://fullname.com/nodered truy cập vào nodered qua cổng 80, (dù nodered đang chạy ở port 1880)
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
-**BÀI LÀM**  
+**### BÀI LÀM**    
+
 
 
 <img width="1473" height="760" alt="image" src="https://github.com/user-attachments/assets/61054318-98be-4b48-99ea-ff7ead152bf3" />   
