@@ -2,10 +2,10 @@
 
 ### BÀI TẬP 3 - PHÁT TRIỂN ỨNG DỤNG TRÊN NỀN WEB  
 --------------------------------------------------
-Giảng viên: Đỗ Duy Cốp 
-Lớp học phần: 58KTP
-Sinh viên thực hiện: Nguyễn Như Khiêm
-Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)
+Giảng viên: Đỗ Duy Cốp   
+Lớp học phần: 58KTP  
+Sinh viên thực hiện: Nguyễn Thị Kim Huệ   
+Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)  
 
 
 **Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux**
