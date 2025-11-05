@@ -6,7 +6,7 @@ Lớp học phần: 58KTPM
 Ngày giao   : 2025-10-24 13:50
 Hạn nộp     : 2025-11-05 00:00
 --------------------------------------------------
-Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
+**Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux**
 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
  - enable wsl: cài đặt ubuntu
