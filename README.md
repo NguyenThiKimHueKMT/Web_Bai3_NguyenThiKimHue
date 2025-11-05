@@ -1,7 +1,13 @@
-# Web_Bai3_NguyenThiKimHue
-BÀI TÂP WEB 
-###BÀI TẬP 3 - PHÁT TRIỂN ỨNG DỤNG TRÊN NỀN WEB
+# Web_Bai3_NguyenThiKimHue  
+
+###BÀI TẬP 3 - PHÁT TRIỂN ỨNG DỤNG TRÊN NỀN WEB  
 --------------------------------------------------
+Giảng viên: Đỗ Duy Cốp 
+Lớp học phần: 58KTP
+Sinh viên thực hiện: Nguyễn Như Khiêm
+Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)
+
+
 **Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux**
 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
