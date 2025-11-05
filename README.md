@@ -7,9 +7,8 @@ Lớp học phần: 58KTP
 Sinh viên thực hiện: Nguyễn Thị Kim Huệ   
 Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)  
 
-
-**Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux**
-1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
+**## YÊU CẦU BÀI TOÁN**
+1. Cài đặt môi trường linux
  - enable wsl: cài đặt docker desktop
  - enable wsl: cài đặt ubuntu
  - sử dụng Hyper-V: cài đặt ubuntu
