@@ -35,6 +35,19 @@ Chủ đề: Lập trình ứng dụng web thương mại điện tử trên n�
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
 **### BÀI LÀM**    
+**BƯỚC 1: LỰA CHỌN & CÀI ĐẶT MÔI TRƯỜNG LINUX**  
+Dùng máy ảo Ubuntu với Docker cài trực tiếp.  
+
+**BƯỚC 2: CÀI ĐẶT DOCKER & DOCKER COMPOSE**  
+**Kiểm tra Docker Desktop đã cài và đang chạy**
+Mở Docker Desktop:
+Nhấn Windows → nhập “Docker Desktop” → Nhấn Enter mở ứng dụng.  
+**Kiểm tra Docker trong Ubuntu WSL**
+Mở Ubuntu (WSL):
+  Nhấn Windows → nhập “Ubuntu” → Nhấn Enter.
+Kiểm tra phiên bản Docker:
+Gõ lệnh trong cửa sổ Ubuntu:docker --version
+
 
 
 
