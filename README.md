@@ -182,7 +182,7 @@ docker compose up -d~
 
 **CẤU HÌNH NGINX**
 File nginx/default.conf:
-```server {  
+erver {  
     listen 80;  
     server_name nguyenthikimhue.com www.nguyenthikimhue.com;  
     
@@ -263,11 +263,49 @@ File nginx/default.conf:
     error_page 404 /index.html;  
 }```
 
-Website chính:  http://nguyenthikimhue.com
-Node-RED:  http://nguyenthikimhue.com/nodered  
-Grafana:  http://nguyenthikimhue.com/grafana
+**Website chính:**  http://nguyenthikimhue.com
+**Node-RED:**  http://nguyenthikimhue.com/nodered  
+**Grafana:**  http://nguyenthikimhue.com/grafana
 
-**FRONTEND (index.html + script.js)**
+**FRONTEND (index.html + script.js)**  
+**Các chức năng:**
+Login (mã hóa mật khẩu bằng SHA-256)  
+Hiển thị danh sách sản phẩm bán chạy  
+Thêm sản phẩm vào giỏ hàng  
+Thanh toán, lưu đơn hàng vào MariaDB  
+**Trang Admin:**
+Xem danh sách đơn hàng  
+Thống kê doanh thu (iframe Grafana)  
+
+**NODE-RED BACKEND**  
+Các flow chính:  
+1. Đăng Nhập : API /login – Xác thực người dùng  
+curl -X POST http://nguyenthikimhue.com/api/login
+<img width="1218" height="172" alt="image" src="https://github.com/user-attachments/assets/b98c51da-4a23-49a5-920e-a12a8ece998b" />
+ 
+ Sản phẩm bán chạy  
+curl http://nguyenthikimhue.com/api/san-pham-ban-chay  
+<img width="887" height="94" alt="image" src="https://github.com/user-attachments/assets/5a0b8d72-0c03-4fff-9f06-fa3d895ac917" /> 
+
+Nhóm sản phẩm  
+curl http://nguyenthikimhue.com/api/nhom-san-pham   
+<img width="868" height="113" alt="image" src="https://github.com/user-attachments/assets/ca668743-4967-4fe8-8184-301f7ab79fca" /> 
+
+ Sản phẩm theo nhóm   
+curl http://nguyenthikimhue.com/api/san-pham?nhom=1  
+<img width="887" height="151" alt="image" src="https://github.com/user-attachments/assets/6b43a6f7-8510-4e13-9d74-9e383cc0e836" /> 
+
+Tìm kiếm  
+curl http://nguyenthikimhue.com/api/tim-kiem?q=sach  
+<img width="847" height="153" alt="image" src="https://github.com/user-attachments/assets/954dca6f-f755-4710-ab90-9530366d9b13" />  
+
+
+
+
+
+
+ 
+
 
 
 
