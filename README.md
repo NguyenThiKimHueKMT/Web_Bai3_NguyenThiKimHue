@@ -7,7 +7,7 @@ Lớp học phần: 58KTP
 Sinh viên thực hiện: Nguyễn Thị Kim Huệ    
 Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)   
 
-**## YÊU CẦU BÀI TOÁN**
+**YÊU CẦU BÀI TOÁN**
 1. Cài đặt môi trường linux
  - enable wsl: cài đặt docker desktop
  - enable wsl: cài đặt ubuntu
@@ -34,7 +34,7 @@ Chủ đề: Lập trình ứng dụng web thương mại điện tử trên n�
  - Cấu hình nginx để http://fullname.com/nodered truy cập vào nodered qua cổng 80, (dù nodered đang chạy ở port 1880)
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
-**## BÀI LÀM**    
+**BÀI LÀM**    
 **LỰA CHỌN & CÀI ĐẶT MÔI TRƯỜNG LINUX**  
 Dùng máy ảo Ubuntu với Docker cài trực tiếp.  
 
@@ -340,12 +340,6 @@ la_ban_chay, so_luot_mua, diem_trung_binh
 Vai trò: Quản lý phân loại sản phẩm (nhóm danh mục).  
 Các cột chính:  
 ten_nhom, mo_ta, id
-
-**NODE-RED BACKEND**  
-Các flow chính:  
-1. Đăng Nhập : API /login – Xác thực người dùng  
-curl -X POST http://nguyenthikimhue.com/api/login
-<img width="1565" height="278" alt="image" src="https://github.com/user-attachments/assets/fc92ff81-d6ef-4067-b267-56aa8d45e116" />
 
 **NODE-RED BACKEND**  
 Các flow chính:  
