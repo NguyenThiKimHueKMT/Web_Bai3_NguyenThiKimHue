@@ -320,9 +320,7 @@ curl http://nguyenthikimhue.com/api/tim-kiem?q=sach
 
 TRUY CẬP VÀ KIỂM TRA  
 phpMyAdmin (quản trị CSDL):
-Truy cập http://localhost:8080
-User: root
-Password: yourpassword
+Truy cập http://192.168.2.34:8080
 <img width="1907" height="1029" alt="image" src="https://github.com/user-attachments/assets/2a627661-a607-4b16-9111-91e4612af414" />   
 
 <img width="1911" height="952" alt="image" src="https://github.com/user-attachments/assets/ddb4bddc-4bb2-4ad4-b374-1e03b654bb2b" />  
