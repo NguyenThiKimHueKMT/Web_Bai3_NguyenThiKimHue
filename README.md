@@ -5,7 +5,7 @@
 Giảng viên: Đỗ Duy Cốp   
 Lớp học phần: 58KTP  
 Sinh viên thực hiện: Nguyễn Thị Kim Huệ   
-Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)  
+Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)   
 
 **## YÊU CẦU BÀI TOÁN**
 1. Cài đặt môi trường linux
