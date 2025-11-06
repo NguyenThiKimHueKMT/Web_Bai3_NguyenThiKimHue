@@ -369,7 +369,33 @@ Tìm kiếm
 curl http://nguyenthikimhue.com/api/tim-kiem?q=sach  
 <img width="847" height="153" alt="image" src="https://github.com/user-attachments/assets/954dca6f-f755-4710-ab90-9530366d9b13" />   
 **Test API**  
-<img width="890" height="702" alt="image" src="https://github.com/user-attachments/assets/edc1b0b2-a9cc-40a2-8cd7-32602e892e42" />
+<img width="890" height="702" alt="image" src="https://github.com/user-attachments/assets/edc1b0b2-a9cc-40a2-8cd7-32602e892e42" />   
+
+**FRONTEND (index.html + script.js)**  
+Các chức năng:  
+Login (mã hóa mật khẩu bằng SHA-256)  
+<img width="1787" height="921" alt="image" src="https://github.com/user-attachments/assets/5be9e4aa-925b-403e-b206-2d69b61845aa" />  
+Lưu mật khẩu trong db dạng mã hoá  
+<img width="1563" height="845" alt="image" src="https://github.com/user-attachments/assets/04cb7815-d605-4855-9dce-74742053fedd" />  
+Có tính năng liệt kê các sản phẩm bán chạy ra trang chủ   
+<img width="1820" height="953" alt="Ảnh chụp màn hình 2025-11-07 014835" src="https://github.com/user-attachments/assets/8c854fbd-9b90-45c8-b360-edd36dd5ae8c" />  
+
+**Kết luận**
+Sau khi hoàn thành bài tập, em đã cài đặt và cấu hình thành công môi trường Linux phục vụ cho phát triển web hiện đại. Cụ thể:  
+Đã kích hoạt WSL và cài đặt Ubuntu, hoặc sử dụng Docker Desktop để mô phỏng môi trường Linux trên Windows.  
+Đã cài đặt Docker và docker-compose, triển khai đồng thời nhiều container gồm: MariaDB, phpMyAdmin, Node-RED, InfluxDB, Grafana và Nginx thông qua một file docker-compose.yml.  
+Đã thiết kế và lập trình web thương mại điện tử dạng Single Page Application (SPA) với giao diện sinh động bằng HTML, CSS, JavaScript, kết nối backend qua Node-RED xử lý dữ liệu và phản hồi JSON.  
+Hệ thống đã hoàn thiện các chức năng chính như:  
+Đăng nhập, lưu phiên đăng nhập bằng cookie và session.  
+Liệt kê, tìm kiếm, và thêm sản phẩm vào giỏ hàng.  
+Đặt hàng, quản lý đơn hàng.  
+Trang quản trị (Admin) có thể xem thống kê, cập nhật trạng thái đơn hàng, và quan sát biểu đồ bán hàng trên Grafana.  
+Đã cấu hình Nginx làm web server trung gian, giúp người dùng truy cập website qua domain nội bộ http://<fullname>.com, đồng thời định tuyến truy cập đến Node-RED (port 1880) và Grafana (port 3000) thông qua cổng 80.  
+
+
+
+
+
 
 
 
