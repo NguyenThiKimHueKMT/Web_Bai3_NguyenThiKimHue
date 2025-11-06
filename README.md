@@ -54,12 +54,12 @@ Trong Ubuntu gõ:docker run --rm hello-world
 <img width="1087" height="498" alt="image" src="https://github.com/user-attachments/assets/a9a1a164-a3cd-46cb-8f40-bb94539b4a69" />  
 **CẤU HÌNH DOCKER-COMPOSE**   
 Tạo file docker-compose.yml:  
-`version: '3.8'`  
+```version: '3.8'  
 
-`services:`  
-  `mariadb:`  
-   ` image: mariadb:10.11`  
-   ` container_name: mariadb`  
+services:  
+  mariadb: 
+    image: mariadb:10.11  
+    container_name: mariadb```  
     `restart: always`  
   `  environment:`  
     `  MYSQL_ROOT_PASSWORD: root123`  
