@@ -290,7 +290,7 @@ PhpMyAdmin chạy tại http://172.25.128.100:8080/
 <img width="1914" height="1029" alt="Ảnh chụp màn hình 2025-11-06 085945" src="https://github.com/user-attachments/assets/417b1123-4bca-4833-b577-9d02cda7e95d" />  
 
   InfluxDB chạy tại http://172.25.128.100:8086/   
-  <img width="1903" height="1026" alt="Ảnh chụp màn hình 2025-11-06 085925" src="https://github.com/user-attachments/assets/1f00bcfe-9939-40e5-8f3f-76189a95b669" />   
+<img width="1916" height="958" alt="image" src="https://github.com/user-attachments/assets/387d05f6-b541-4f2d-8d32-c1106c93097a" />  
 
   Website chính: http://nguyenthikimhue.com  
 <img width="1851" height="979" alt="image" src="https://github.com/user-attachments/assets/07d80b06-a147-43d4-9bea-817002390a93" />   
