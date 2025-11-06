@@ -34,7 +34,7 @@ Chủ đề: Lập trình ứng dụng web thương mại điện tử trên n�
  - Cấu hình nginx để http://fullname.com/nodered truy cập vào nodered qua cổng 80, (dù nodered đang chạy ở port 1880)
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
-**### BÀI LÀM**    
+**## BÀI LÀM**    
 **LỰA CHỌN & CÀI ĐẶT MÔI TRƯỜNG LINUX**  
 Dùng máy ảo Ubuntu với Docker cài trực tiếp.  
 
@@ -266,9 +266,10 @@ erver {
 }
 ```
 
-**Website chính:**  http://nguyenthikimhue.com
-**Node-RED:**  http://nguyenthikimhue.com/nodered  
-**Grafana:**  http://nguyenthikimhue.com/grafana
+**Website chính:**  http://nguyenthikimhue.com  
+**Node-RED:**  http://nguyenthikimhue.com/nodered    
+**Grafana:**  http://nguyenthikimhue.com/grafana  
+
 
 **FRONTEND (index.html + script.js)**  
 **Các chức năng:**
