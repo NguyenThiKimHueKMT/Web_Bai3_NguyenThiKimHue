@@ -46,7 +46,12 @@ Nhấn Windows → nhập “Docker Desktop” → Nhấn Enter mở ứng dụn
 Mở Ubuntu (WSL):
   Nhấn Windows → nhập “Ubuntu” → Nhấn Enter.
 Kiểm tra phiên bản Docker:
-Gõ lệnh trong cửa sổ Ubuntu:docker --version
+Gõ lệnh trong cửa sổ Ubuntu:docker --version  
+Kiểm tra docker compose  
+Gõ lệnh: docker compose version  
+Kiểm tra thử Docker bằng ví dụ Hello World   
+Trong Ubuntu gõ:docker run --rm hello-world  
+
 
 
 
