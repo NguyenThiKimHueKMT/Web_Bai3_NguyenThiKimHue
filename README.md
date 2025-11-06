@@ -331,7 +331,7 @@ Password: yourpassword
 Tạo data iotweb 
 <img width="1902" height="964" alt="image" src="https://github.com/user-attachments/assets/18730e72-e115-46b1-bcbb-938295ca959e" />  
 
-<img width="1912" height="951" alt="image" src="https://github.com/user-attachments/assets/9b8e5e34-3a78-4426-b5e6-5c5ce6445a43" />  
+<img width="1912" height="951" alt="image" src="https://github.com/user-attachments/assets/9b8e5e34-3a78-4426-b5e6-5c5ce6445a43" />    
 
 
 
