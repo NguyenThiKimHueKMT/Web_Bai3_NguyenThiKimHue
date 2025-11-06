@@ -281,6 +281,72 @@ Thanh toán, lưu đơn hàng vào MariaDB
 Xem danh sách đơn hàng  
 Thống kê doanh thu (iframe Grafana)  
 
+TRUY CẬP VÀ KIỂM TRA  
+phpMyAdmin (quản trị CSDL):
+Truy cập http://192.168.2.34:8080
+<img width="1907" height="1029" alt="image" src="https://github.com/user-attachments/assets/2a627661-a607-4b16-9111-91e4612af414" />  
+
+PhpMyAdmin chạy tại http://172.25.128.100:8080/  
+<img width="1914" height="1029" alt="Ảnh chụp màn hình 2025-11-06 085945" src="https://github.com/user-attachments/assets/417b1123-4bca-4833-b577-9d02cda7e95d" />  
+
+  InfluxDB chạy tại http://172.25.128.100:8086/   
+  <img width="1903" height="1026" alt="Ảnh chụp màn hình 2025-11-06 085925" src="https://github.com/user-attachments/assets/1f00bcfe-9939-40e5-8f3f-76189a95b669" />   
+
+  Website chính: http://nguyenthikimhue.com  
+  <img width="1841" height="974" alt="image" src="https://github.com/user-attachments/assets/3c03fbb8-56cc-437a-bcc6-e9f1b965998b" />  
+
+  Node-RED: http://nguyenthikimhue.com/nodered  
+Cấu hình file settings.js để nodered yêu cầu đăng nhập  
+ Tiếp theo chạy Node_RED  
+ <img width="606" height="335" alt="Ảnh chụp màn hình 2025-10-25 125027" src="https://github.com/user-attachments/assets/92589ea2-44e4-4da5-bd14-efc8254dfbc7" />   
+
+ **MariaDB**  
+ <img width="1910" height="973" alt="image" src="https://github.com/user-attachments/assets/5448789f-a98a-48cd-9efe-4900b66663e5" />   
+
+ **Cơ sở dữ liệu: ShopSach**  
+ Danh sách bảng và vai trò  
+1. NguoiDung  
+Vai trò: Lưu thông tin người dùng của hệ thống (bao gồm cả admin và khách hàng).  
+Các cột chính:  
+ten_dang_nhap: Tên đăng nhập 
+mat_khau: Mật khẩu đã mã hóa  
+ho_ten, email, dien_thoai  
+la_admin: Xác định người quản trị (1) hay khách hàng (0)  
+ 
+2. DonHang  
+Vai trò: Lưu thông tin các đơn hàng của người dùng.  
+Các cột chính:  
+nguoi_dung_id: Khách hàng đặt hàng    
+tong_tien: Tổng giá trị đơn hàng
+trang_thai: Trạng thái đơn (chờ, đang giao, đã giao, huỷ, …)  
+ten_nguoi_nhan, dia_chi_giao, dien_thoai_nguoi_nhan  
+ngay_tao, ngay_cap_nhat  
+
+3. ChiTietDonHang  
+Vai trò: Lưu chi tiết từng sản phẩm trong đơn hàng (liên kết nhiều–nhiều giữa DonHang và SanPham).  
+Các cột chính:  
+don_hang_id: Đơn hàng chứa sản phẩm  
+san_pham_id: Sản phẩm trong đơn  
+so_luong: Số lượng mua  
+gia_luc_mua: Giá tại thời điểm đặt hàng  
+
+4.  SanPham  
+Vai trò: Lưu thông tin chi tiết về sản phẩm.  
+Các cột chính:  
+ten_san_pham, nhom_id, gia_ban, gia_cu, ton_kho, mo_ta, anh  
+la_ban_chay, so_luot_mua, diem_trung_binh  
+
+5.  NhomSanPham  
+Vai trò: Quản lý phân loại sản phẩm (nhóm danh mục).  
+Các cột chính:  
+ten_nhom, mo_ta, id
+
+**NODE-RED BACKEND**  
+Các flow chính:  
+1. Đăng Nhập : API /login – Xác thực người dùng  
+curl -X POST http://nguyenthikimhue.com/api/login
+<img width="1565" height="278" alt="image" src="https://github.com/user-attachments/assets/fc92ff81-d6ef-4067-b267-56aa8d45e116" />
+
 **NODE-RED BACKEND**  
 Các flow chính:  
 1. Đăng Nhập : API /login – Xác thực người dùng  
@@ -290,32 +356,37 @@ curl -X POST http://nguyenthikimhue.com/api/login
  Sản phẩm bán chạy  
 curl http://nguyenthikimhue.com/api/san-pham-ban-chay  
 <img width="887" height="94" alt="image" src="https://github.com/user-attachments/assets/5a0b8d72-0c03-4fff-9f06-fa3d895ac917" /> 
+**Test APT**  
+<img width="1162" height="817" alt="image" src="https://github.com/user-attachments/assets/f32be120-a040-4af7-a790-e133d167d788" />
 
 Nhóm sản phẩm  
 curl http://nguyenthikimhue.com/api/nhom-san-pham   
-<img width="868" height="113" alt="image" src="https://github.com/user-attachments/assets/ca668743-4967-4fe8-8184-301f7ab79fca" /> 
+<img width="868" height="113" alt="image" src="https://github.com/user-attachments/assets/ca668743-4967-4fe8-8184-301f7ab79fca" />   
+**Test API**  
+<img width="976" height="787" alt="image" src="https://github.com/user-attachments/assets/c5df18b7-4d1a-4347-b2f4-dd827f33be69" />  
 
  Sản phẩm theo nhóm   
 curl http://nguyenthikimhue.com/api/san-pham?nhom=1  
 <img width="887" height="151" alt="image" src="https://github.com/user-attachments/assets/6b43a6f7-8510-4e13-9d74-9e383cc0e836" /> 
+**Test API**  
+<img width="970" height="486" alt="image" src="https://github.com/user-attachments/assets/db7f3301-372d-4dd9-9ee1-c1c8fe4c1239" />  
 
 Tìm kiếm  
 curl http://nguyenthikimhue.com/api/tim-kiem?q=sach  
-<img width="847" height="153" alt="image" src="https://github.com/user-attachments/assets/954dca6f-f755-4710-ab90-9530366d9b13" />  
-
-TRUY CẬP VÀ KIỂM TRA  
-phpMyAdmin (quản trị CSDL):
-Truy cập http://192.168.2.34:8080
-<img width="1907" height="1029" alt="image" src="https://github.com/user-attachments/assets/2a627661-a607-4b16-9111-91e4612af414" />  
+<img width="847" height="153" alt="image" src="https://github.com/user-attachments/assets/954dca6f-f755-4710-ab90-9530366d9b13" />   
+**Test API**  
+<img width="890" height="702" alt="image" src="https://github.com/user-attachments/assets/edc1b0b2-a9cc-40a2-8cd7-32602e892e42" />
 
 
 
 
-<img width="1226" height="762" alt="image" src="https://github.com/user-attachments/assets/a39fdfa5-9fb5-45d7-a6f2-7355dc8010ce" />  
 
-<img width="1902" height="964" alt="image" src="https://github.com/user-attachments/assets/18730e72-e115-46b1-bcbb-938295ca959e" />  
 
-<img width="1912" height="951" alt="image" src="https://github.com/user-attachments/assets/9b8e5e34-3a78-4426-b5e6-5c5ce6445a43" />    
+
+
+  
+
+
 
 
 
