@@ -174,7 +174,11 @@ networks:
 
 
 *Chạy  container*
-`docker compose up -d~
+docker compose up -d~
+
+
+
+
 
 **CẤU HÌNH NGINX**
 File nginx/default.conf:
