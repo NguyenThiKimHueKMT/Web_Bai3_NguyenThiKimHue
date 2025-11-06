@@ -303,30 +303,16 @@ Tìm kiếm
 curl http://nguyenthikimhue.com/api/tim-kiem?q=sach  
 <img width="847" height="153" alt="image" src="https://github.com/user-attachments/assets/954dca6f-f755-4710-ab90-9530366d9b13" />  
 
-
-
-
-
-
- 
-
-
-
-
-
-
-
-<img width="1473" height="760" alt="image" src="https://github.com/user-attachments/assets/61054318-98be-4b48-99ea-ff7ead152bf3" />   
-
 TRUY CẬP VÀ KIỂM TRA  
 phpMyAdmin (quản trị CSDL):
 Truy cập http://192.168.2.34:8080
-<img width="1907" height="1029" alt="image" src="https://github.com/user-attachments/assets/2a627661-a607-4b16-9111-91e4612af414" />   
+<img width="1907" height="1029" alt="image" src="https://github.com/user-attachments/assets/2a627661-a607-4b16-9111-91e4612af414" />  
 
-<img width="1911" height="952" alt="image" src="https://github.com/user-attachments/assets/ddb4bddc-4bb2-4ad4-b374-1e03b654bb2b" />  
+
+
 
 <img width="1226" height="762" alt="image" src="https://github.com/user-attachments/assets/a39fdfa5-9fb5-45d7-a6f2-7355dc8010ce" />  
-Tạo data iotweb 
+
 <img width="1902" height="964" alt="image" src="https://github.com/user-attachments/assets/18730e72-e115-46b1-bcbb-938295ca959e" />  
 
 <img width="1912" height="951" alt="image" src="https://github.com/user-attachments/assets/9b8e5e34-3a78-4426-b5e6-5c5ce6445a43" />    
