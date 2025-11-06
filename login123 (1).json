@@ -1,0 +1,252 @@
+[
+    {
+        "id": "f9c42ddac07af80e",
+        "type": "group",
+        "z": "6ebf0c7433974a55",
+        "name": "API Login",
+        "style": {
+            "stroke": "#000000",
+            "label": true,
+            "color": "#ff0000"
+        },
+        "nodes": [
+            "6a0f1fda123ac451",
+            "0b631002d7942d6c",
+            "b14b9f8d5d78b9e0",
+            "f706a0c0e259f3bd",
+            "8b6a670f180e56d3",
+            "0c8d54accab94fd8",
+            "084ad80b51dfdd34",
+            "02b5d0d5a34c25e5",
+            "6d470b6a286702e3",
+            "777a3c830dd72d4d",
+            "945bc5753e780b3f",
+            "c9eab568914c4c32"
+        ],
+        "x": 54,
+        "y": 99,
+        "w": 1432,
+        "h": 282
+    },
+    {
+        "id": "6a0f1fda123ac451",
+        "type": "http in",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "POST /login",
+        "url": "/login",
+        "method": "post",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "0b631002d7942d6c",
+                "b14b9f8d5d78b9e0"
+            ]
+        ]
+    },
+    {
+        "id": "0b631002d7942d6c",
+        "type": "debug",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "1️⃣ Input",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "complete": "payload",
+        "x": 350,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "b14b9f8d5d78b9e0",
+        "type": "function",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "Chuẩn bị data",
+        "func": "let data = msg.payload;\nif (typeof data === 'string') {\n    try { data = JSON.parse(data); } catch(e) {}\n}\n\nconst username = data.ten_dang_nhap;\nconst password = data.mat_khau;\n\nif (!username || !password) {\n    msg.statusCode = 400;\n    msg.payload = { error: 'Thiếu username hoặc password' };\n    return null;\n}\n\nmsg.username = username;\nmsg.password = password;\nmsg.payload = password;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            [
+                "f706a0c0e259f3bd"
+            ]
+        ]
+    },
+    {
+        "id": "f706a0c0e259f3bd",
+        "type": "exec",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "command": "echo -n",
+        "addpay": "payload",
+        "append": "| sha256sum | cut -d' ' -f1",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "SHA256 hash",
+        "x": 570,
+        "y": 260,
+        "wires": [
+            [
+                "8b6a670f180e56d3"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "8b6a670f180e56d3",
+        "type": "function",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "Xử lý hash",
+        "func": "const hash = msg.payload.trim();\nmsg.password_hash = hash;\nmsg.topic = \"SELECT id, ten_dang_nhap, mat_khau, la_admin FROM NguoiDung WHERE ten_dang_nhap = ?\";\nmsg.payload = [msg.username];\n\nnode.warn(`Username: ${msg.username}`);\nnode.warn(`Hash: ${hash}`);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 260,
+        "wires": [
+            [
+                "0c8d54accab94fd8",
+                "084ad80b51dfdd34"
+            ]
+        ]
+    },
+    {
+        "id": "0c8d54accab94fd8",
+        "type": "debug",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "2️⃣ Hash",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "password_hash",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "084ad80b51dfdd34",
+        "type": "mysql",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "mydb": "aa6f09801d744578",
+        "name": "Truy Vấn DB",
+        "x": 970,
+        "y": 300,
+        "wires": [
+            [
+                "02b5d0d5a34c25e5",
+                "6d470b6a286702e3"
+            ]
+        ]
+    },
+    {
+        "id": "02b5d0d5a34c25e5",
+        "type": "debug",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "3️⃣ DB Result",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "complete": "payload",
+        "x": 1100,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "6d470b6a286702e3",
+        "type": "function",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "Verify",
+        "func": "const rows = msg.payload;\n\nif (!rows || rows.length === 0) {\n    msg.statusCode = 401;\n    msg.payload = { error: 'Username không tồn tại' };\n    node.send([null, msg]);\n    return;\n}\n\nconst user = rows[0];\nconst hash_db = user.mat_khau;\nconst hash_input = msg.password_hash;\n\nnode.warn(`DB: ${hash_db}`);\nnode.warn(`Input: ${hash_input}`);\n\nif (hash_db !== hash_input) {\n    msg.statusCode = 401;\n    msg.payload = { error: 'Sai mật khẩu' };\n    node.send([null, msg]);\n    return;\n}\n\nconst token = Buffer.from(JSON.stringify({\n    id: user.id,\n    la_admin: user.la_admin\n})).toString('base64');\n\nmsg.payload = {\n    token: token,\n    la_admin: user.la_admin,\n    user: user.ten_dang_nhap,\n    message: 'Đăng nhập thành công'\n};\n\nnode.send([msg, null]);",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 1150,
+        "y": 260,
+        "wires": [
+            [
+                "777a3c830dd72d4d",
+                "945bc5753e780b3f"
+            ],
+            [
+                "c9eab568914c4c32"
+            ]
+        ]
+    },
+    {
+        "id": "777a3c830dd72d4d",
+        "type": "debug",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "4️⃣ Success",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "complete": "payload",
+        "x": 1360,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "945bc5753e780b3f",
+        "type": "http response",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "200",
+        "statusCode": "200",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1410,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c9eab568914c4c32",
+        "type": "http response",
+        "z": "6ebf0c7433974a55",
+        "g": "f9c42ddac07af80e",
+        "name": "401",
+        "statusCode": "401",
+        "headers": {
+            "content-type": "application/json"
+        },
+        "x": 1350,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "aa6f09801d744578",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "mariadb",
+        "port": "3306",
+        "db": "BanHang",
+        "tz": "",
+        "charset": ""
+    },
+    {
+        "id": "a30203f17e233a06",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-mysql": "2.0.0"
+        }
+    }
+]
