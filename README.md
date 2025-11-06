@@ -54,7 +54,7 @@ Trong Ubuntu gõ:docker run --rm hello-world
 <img width="1087" height="498" alt="image" src="https://github.com/user-attachments/assets/a9a1a164-a3cd-46cb-8f40-bb94539b4a69" />  
 **CẤU HÌNH DOCKER-COMPOSE**   
 Tạo file docker-compose.yml:  
-`version: '3.8'
+version: '3.8'
 
 services:
   mariadb:
@@ -63,9 +63,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: ShopSach
-      MYSQL_USER: hue
-      MYSQL_PASSWORD: hue123
+      MYSQL_DATABASE: BanHang
+      MYSQL_USER: khiem
+      MYSQL_PASSWORD: khiem123
     ports:
       - "3306:3306"
     volumes:
@@ -110,7 +110,7 @@ services:
       node-red
       --httpNodeRoot=/api
       --httpAdminRoot=/nodered
-      --functionGlobalContext.mysql=require('mysql').createPool({host:'mariadb',user:'hue',password:'hue123',database:'ShopSach',port:3306,charset:'utf8mb4',connectionLimit:10})
+      --functionGlobalContext.mysql=require('mysql').createPool({host:'mariadb',user:'khiem',password:'khiem123',database:'BanHang',port:3306,charset:'utf8mb4',connectionLimit:10})
       --functionGlobalContext.crypto=require('crypto')
       "
 
@@ -133,23 +133,23 @@ services:
       - ecommerce-network
 
   grafana:
-      image: grafana/grafana:latest
-      container_name: grafana
-      restart: always
-      environment:
-        - GF_SERVER_HTTP_PORT=3000
-        - GF_SERVER_ROOT_URL=http://nguyenthikimhue.com/grafana
-        - GF_SERVER_SERVE_FROM_SUB_PATH=true
-        - GF_SECURITY_ADMIN_USER=admin
-        - GF_SECURITY_ADMIN_PASSWORD=admin123
-      ports:
-        - "3000:3000"
-      volumes:
-        - ./grafana/data:/var/lib/grafana
-      depends_on:
-        - influxdb
-      networks:
-        - ecommerce-network
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    environment:
+      - GF_SERVER_HTTP_PORT=3000
+      - GF_SERVER_ROOT_URL=http://nguyennhukhiem.com/grafana
+      - GF_SERVER_SERVE_FROM_SUB_PATH=true
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./grafana/data:/var/lib/grafana
+    depends_on:
+      - influxdb
+    networks:
+      - ecommerce-network
 
   nginx:
     image: nginx:latest
@@ -170,9 +170,7 @@ services:
 
 networks:
   ecommerce-network:
-    driver: bridge`
-
-
+    driver: bridge
 
 
 
