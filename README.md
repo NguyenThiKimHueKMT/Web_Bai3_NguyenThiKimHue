@@ -50,7 +50,11 @@ Gõ lệnh trong cửa sổ Ubuntu:docker --version
 Kiểm tra docker compose  
 Gõ lệnh: docker compose version  
 Kiểm tra thử Docker bằng ví dụ Hello World   
-Trong Ubuntu gõ:docker run --rm hello-world  
+Trong Ubuntu gõ:docker run --rm hello-world   
+<img width="1087" height="498" alt="image" src="https://github.com/user-attachments/assets/a9a1a164-a3cd-46cb-8f40-bb94539b4a69" />  
+**CẤU HÌNH DOCKER-COMPOSE**  
+
+
 
 
 
