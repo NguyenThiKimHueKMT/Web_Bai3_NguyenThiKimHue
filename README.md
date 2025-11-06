@@ -293,7 +293,7 @@ PhpMyAdmin chạy tại http://172.25.128.100:8080/
   <img width="1903" height="1026" alt="Ảnh chụp màn hình 2025-11-06 085925" src="https://github.com/user-attachments/assets/1f00bcfe-9939-40e5-8f3f-76189a95b669" />   
 
   Website chính: http://nguyenthikimhue.com  
-  <img width="1841" height="974" alt="image" src="https://github.com/user-attachments/assets/3c03fbb8-56cc-437a-bcc6-e9f1b965998b" />  
+<img width="1851" height="979" alt="image" src="https://github.com/user-attachments/assets/07d80b06-a147-43d4-9bea-817002390a93" />   
 
   Node-RED: http://nguyenthikimhue.com/nodered  
 Cấu hình file settings.js để nodered yêu cầu đăng nhập  
