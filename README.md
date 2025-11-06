@@ -35,10 +35,10 @@ Chủ đề: Lập trình ứng dụng web thương mại điện tử trên n�
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
 **### BÀI LÀM**    
-**BƯỚC 1: LỰA CHỌN & CÀI ĐẶT MÔI TRƯỜNG LINUX**  
+**LỰA CHỌN & CÀI ĐẶT MÔI TRƯỜNG LINUX**  
 Dùng máy ảo Ubuntu với Docker cài trực tiếp.  
 
-**BƯỚC 2: CÀI ĐẶT DOCKER & DOCKER COMPOSE**  
+**CÀI ĐẶT DOCKER & DOCKER COMPOSE**  
 **Kiểm tra Docker Desktop đã cài và đang chạy**
 Mở Docker Desktop:
 Nhấn Windows → nhập “Docker Desktop” → Nhấn Enter mở ứng dụng.  
@@ -170,7 +170,98 @@ services:
   
 networks:  
   ecommerce-network:  
-  driver: bridge ``` 
+  driver: bridge
+*Chạy  container*
+`docker compose up -d`
+
+**CẤU HÌNH NGINX**
+File nginx/default.conf:
+```server {  
+    listen 80;  
+    server_name nguyenthikimhue.com www.nguyenthikimhue.com;  
+    
+    # === Gốc: SPA Frontend ===  
+    location / {  
+        root /usr/share/nginx/html;  
+        index index.html;  
+        try_files $uri $uri/ /index.html;  
+  
+        # Cache static assets  
+        location ~* \.(js|css|png|jpg|jpeg|gif|svg|ico|woff2?|ttf|eot)$ {  
+            expires 1y;  
+            add_header Cache-Control "public, immutable";  
+        }  
+    }  
+
+    # === API Backend (Node-RED) ===  
+    location /api/ {  
+        proxy_pass http://nodered:1880/;  
+        proxy_http_version 1.1;  
+        proxy_set_header Host $host;  
+        proxy_set_header X-Real-IP $remote_addr;  
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+        proxy_set_header X-Forwarded-Proto $scheme;  
+    }  
+  
+        # === API User Orders (Node-RED) ===  
+    location /user/ {  
+        proxy_pass http://nodered:1880/;  
+        proxy_http_version 1.1;  
+        proxy_set_header Host $host;  
+        proxy_set_header X-Real-IP $remote_addr;  
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+        proxy_set_header X-Forwarded-Proto $scheme;  
+    }  
+  
+    # === Node-RED UI (Subpath) ===  
+    location ^~ /nodered/ {  
+        proxy_pass http://nodered:1880/;  
+        proxy_http_version 1.1;  
+        proxy_set_header Upgrade $http_upgrade;  
+        proxy_set_header Connection "upgrade";  
+        proxy_set_header Host $host;  
+        proxy_set_header X-Real-IP $remote_addr;  
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+        proxy_set_header X-Forwarded-Proto $scheme;  
+  
+        # Fix tài nguyên tĩnh (CSS/JS) cho subpath  
+        sub_filter_once off;  
+        sub_filter 'href="/'  'href="/nodered/';  
+        sub_filter 'src="/'   'src="/nodered/';  
+        sub_filter 'action="/' 'action="/nodered/';  
+        sub_filter_types text/css text/javascript text/xml application/javascript;  
+        proxy_set_header Accept-Encoding "";  
+    }  
+  
+    # === Grafana (Subpath) ===  
+    location ^~ /grafana/ {  
+        proxy_pass http://grafana:3000;  
+        proxy_http_version 1.1;  
+          
+        proxy_set_header Host $host;  
+        proxy_set_header X-Real-IP $remote_addr;  
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
+        proxy_set_header X-Forwarded-Proto $scheme;  
+        
+        proxy_set_header Upgrade $http_upgrade;  
+        proxy_set_header Connection "upgrade";  
+    }  
+   
+    # === Bảo mật Header ===  
+    add_header X-Frame-Options "SAMEORIGIN" always;  
+    add_header X-Content-Type-Options "nosniff" always;  
+    add_header X-XSS-Protection "1; mode=block" always;  
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;  
+   
+    # === 404 Fallback cho SPA ===  
+    error_page 404 /index.html;  
+}
+Website chính:  http://nguyenthikimhue.com
+Node-RED:  http://nguyenthikimhue.com/nodered  
+Grafana:  http://nguyenthikimhue.com/grafana
+
+**FRONTEND (index.html + script.js)**
+
 
 
 
