@@ -4,7 +4,7 @@
 --------------------------------------------------
 Giảng viên: Đỗ Duy Cốp   
 Lớp học phần: 58KTP  
-Sinh viên thực hiện: Nguyễn Thị Kim Huệ    
+Sinh viên thực hiện: Nguyễn Thị Kim Huệ     
 Chủ đề: Lập trình ứng dụng web thương mại điện tử trên nền Linux (Docker + Hyper-V + Ubuntu)   
 
 **YÊU CẦU BÀI TOÁN**
@@ -290,7 +290,7 @@ PhpMyAdmin chạy tại http://172.25.128.100:8080/
 <img width="1914" height="1029" alt="Ảnh chụp màn hình 2025-11-06 085945" src="https://github.com/user-attachments/assets/417b1123-4bca-4833-b577-9d02cda7e95d" />  
 
   InfluxDB chạy tại http://172.25.128.100:8086/   
-<img width="1916" height="958" alt="image" src="https://github.com/user-attachments/assets/387d05f6-b541-4f2d-8d32-c1106c93097a" />  
+<img width="1903" height="1026" alt="Ảnh chụp màn hình 2025-11-06 085925" src="https://github.com/user-attachments/assets/aef1a1a3-1d24-4462-9f80-b2f8889c83eb" />  
 
   Website chính: http://nguyenthikimhue.com  
 <img width="1851" height="979" alt="image" src="https://github.com/user-attachments/assets/07d80b06-a147-43d4-9bea-817002390a93" />   
@@ -301,7 +301,7 @@ Cấu hình file settings.js để nodered yêu cầu đăng nhập
  <img width="606" height="335" alt="Ảnh chụp màn hình 2025-10-25 125027" src="https://github.com/user-attachments/assets/92589ea2-44e4-4da5-bd14-efc8254dfbc7" />   
 
  **MariaDB**  
- <img width="1910" height="973" alt="image" src="https://github.com/user-attachments/assets/5448789f-a98a-48cd-9efe-4900b66663e5" />   
+<img width="1916" height="958" alt="image" src="https://github.com/user-attachments/assets/387d05f6-b541-4f2d-8d32-c1106c93097a" />  
 
  **Cơ sở dữ liệu: ShopSach**  
  Danh sách bảng và vai trò  
@@ -345,7 +345,7 @@ ten_nhom, mo_ta, id
 Các flow chính:  
 1. Đăng Nhập : API /login – Xác thực người dùng  
 curl -X POST http://nguyenthikimhue.com/api/login
-<img width="1218" height="172" alt="image" src="https://github.com/user-attachments/assets/b98c51da-4a23-49a5-920e-a12a8ece998b" />
+<img width="1625" height="336" alt="image" src="https://github.com/user-attachments/assets/b45b1f0c-742c-4f0d-9ae8-1bee3c8add52" />   
  
  Sản phẩm bán chạy  
 curl http://nguyenthikimhue.com/api/san-pham-ban-chay  
