@@ -183,6 +183,7 @@ docker compose up -d~
 
 **CẤU HÌNH NGINX**
 File nginx/default.conf:
+```
 erver {  
     listen 80;  
     server_name nguyenthikimhue.com www.nguyenthikimhue.com;  
@@ -262,7 +263,8 @@ erver {
    
     # === 404 Fallback cho SPA ===  
     error_page 404 /index.html;  
-}```
+}
+```
 
 **Website chính:**  http://nguyenthikimhue.com
 **Node-RED:**  http://nguyenthikimhue.com/nodered  
